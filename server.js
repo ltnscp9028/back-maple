@@ -6,7 +6,6 @@ const http = require("http");
 const https = require("https");
 const fs = require("fs");
 const PORT = 5001;
-const stest = "test!";
 const options = {
 	key: fs.readFileSync('./key.pem'),
 	cert: fs.readFileSync('./cert.pem')
