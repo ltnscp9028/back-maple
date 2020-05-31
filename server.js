@@ -10,7 +10,7 @@ const options = {
 	key: fs.readFileSync('./key.pem'),
 	cert: fs.readFileSync('./cert.pem')
 };
-
+//console.log(test);
 const app = express();
 
 let whitelist = ["http://locasthost:3000/*","https://ltnscp9028.github.io/*"];
