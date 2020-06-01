@@ -1,5 +1,4 @@
 const sCare = (restat, n, ww,checkSt,arr) => {
-    // const { checkSt, arr } = this;
     //str = 0,  dex = 1, luk = 2, int = 3 , str+dex = 4 , str+int = 5, str+luk = 6 ,  dex + int = 7 ,  dex _ luk = 8, int + luk = 9
     switch (checkSt[n]) {
         case 0:

@@ -55,13 +55,10 @@ const test = async(req,res) => {
 const weaponAddop = async(req,res) => {
     const statTmp = JSON.parse(JSON.stringify(req.body));
     let statArr = [];
-    // console.log(statTmp);
     for(let key in statTmp){
         statArr.push(statTmp[key]);
     }
-    // console.log(statArr);
     const {lv} = statTmp;
-    // console.log(statArr);
     let gmAddop = [];
         const fafnir = [12, 18, 24, 32, 41];
         const absol = [15, 22, 30, 40, 51];
@@ -72,10 +69,8 @@ const weaponAddop = async(req,res) => {
         for (let i = 0; i < 5; i++) {
             if (tmpGong == tmp[i])
                 gmAddop.push(`공격력 ${i}추옵(${statArr[7]})`);
-
             if (tmpMa == tmp[i])
                 gmAddop.push(`마력  ${i}추옵(${statArr[8]})`);
-
         }
         if (statArr[9]) gmAddop.push(`보공 ${8 - statArr[9] / 2}추옵(${statArr[9]}%)`);
         if (statArr[10])gmAddop.push(`데미지 ${8 - statArr[10]}추옵(${statArr[10]}%)`);
