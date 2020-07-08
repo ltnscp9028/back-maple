@@ -8,12 +8,21 @@ const calcGrowth = (nowSymbolLevel,nowSymbolCount,getSymbolCount) => {
     return day;
 }
 
+const calcCost = (nowSymbolLevel) => {
+    let symbolCost = 0;
+    for(let i=nowSymbolLevel+1;i<=20;i++)
+        symbolCost += 2370000+7130000*i;
+    return symbolCost;
+}
+
+
 const returnDayArr = (symbolObject) => {
     let dayArr = [];
     for(let idx in symbolObject){
         const {nowSymbolLevel,nowSymbolCount,getSymbolCount} = symbolObject[idx];
-        let day = calcGrowth(nowSymbolLevel,nowSymbolCount,getSymbolCount);
-        dayArr.push(`${idx} ${day}일`);
+        const day = calcGrowth(nowSymbolLevel,nowSymbolCount,getSymbolCount);
+        const cost = calcCost(nowSymbolLevel);
+        dayArr.push(`${idx} ${day}일, ${cost.toLocaleString()}메소`);
     }
     return dayArr;
 }
