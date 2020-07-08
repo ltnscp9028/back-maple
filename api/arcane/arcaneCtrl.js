@@ -1,9 +1,5 @@
 const util = require('./calcGrowth');
 
-const test = (req,res) => {
-    res.send("test");
-    res.end();
-}
 
 const symbol = (req,res)=>{
     const {nowSymbolLevel,nowSymbolCount,getSymbolCount} = req.params;
@@ -11,5 +7,9 @@ const symbol = (req,res)=>{
     res.status(200).send(`${day}일`);
 }
 
+const postSymbol = (req,res)=>{
+    const dayArr = util.returnDayArr(req.body);
+    res.send(dayArr);
+}
 
-module.exports = {test,symbol};
+module.exports = {symbol,postSymbol,};
