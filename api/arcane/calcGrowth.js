@@ -10,6 +10,7 @@ const calcGrowth = (nowSymbolLevel,nowSymbolCount,getSymbolCount) => {
 
 const calcCost = (nowSymbolLevel) => {
     let symbolCost = 0;
+    console.log(nowSymbolLevel);
     for(let i=nowSymbolLevel+1;i<=20;i++)
         symbolCost += 2370000+7130000*i;
     return symbolCost;
@@ -17,11 +18,13 @@ const calcCost = (nowSymbolLevel) => {
 
 
 const returnDayArr = (symbolObject) => {
+    console.log(symbolObject);
     let dayArr = [];
     for(let idx in symbolObject){
         const {nowSymbolLevel,nowSymbolCount,getSymbolCount} = symbolObject[idx];
         const day = calcGrowth(nowSymbolLevel,nowSymbolCount,getSymbolCount);
         const cost = calcCost(nowSymbolLevel);
+        console.log(day,cost);
         dayArr.push(`${idx} ${day}일, ${cost.toLocaleString()}메소`);
     }
     return dayArr;
