@@ -23,7 +23,7 @@ const returnDayArr = (symbolObject) => {
     for(let idx in symbolObject){
         const {nowSymbolLevel,nowSymbolCount,getSymbolCount} = symbolObject[idx];
         const day = calcGrowth(nowSymbolLevel,nowSymbolCount,getSymbolCount);
-        const cost = calcCost(nowSymbolLevel);
+        const cost = calcCost(nowSymbolLevel*1);
         console.log(day,cost);
         dayArr.push(`${idx} ${day}일, ${cost.toLocaleString()}메소`);
     }
